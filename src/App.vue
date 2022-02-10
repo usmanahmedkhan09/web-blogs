@@ -1,30 +1,36 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <app-bar></app-bar>
+    <router-view></router-view>
   </div>
-  <router-view/>
 </template>
-
+<script>
+import appBar from "./components/app-bar.vue";
+export default {
+  components: {
+    appBar,
+  },
+};
+</script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.main-header {
+  width: inherit;
+  height: 3.5rem;
+  background-color: #00695c;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.main-header__item {
+  margin: 0 1rem;
+  padding: 0;
+  font-size: 1.5rem;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+.router-link-active {
+  color: yellow;
 }
 </style>
